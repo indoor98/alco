@@ -1,4 +1,4 @@
-package com.alco.config;
+package com.alco.global.config;
 
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
@@ -26,6 +26,7 @@ public class SecurityConfig {
 
     @Bean
     public PasswordEncoder passwordEncoder() {
+
         return new BCryptPasswordEncoder();
     }
 
@@ -49,17 +50,10 @@ public class SecurityConfig {
                     return config;
                 }))
                 .authorizeHttpRequests(requests -> {
-                    requests.requestMatchers(
-                                    "/api/v1/auth/signintest",
-                                    "/api/auth/login",
-                                    "/api/auth/reissue",
-                                    "/api/v1/auth/signup",
-                                    "/api/v1/auth/renew",
-                                    "/api/readcheck/**").permitAll()
+                    requests.requestMatchers("/**").permitAll()
                             .requestMatchers(PathRequest.toH2Console()).permitAll()
                             .anyRequest().authenticated();
                 });
-
         return http.build();
     }
 }

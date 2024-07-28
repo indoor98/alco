@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.alco.member.service.MemberSignUpServiceTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-07-28T14:23:25" hostname="jangmyeonghun-ui-MacBookAir.local" time="0.859">
+  <properties/>
+  <testcase name="testEncodePassword()" classname="com.alco.member.service.MemberSignUpServiceTest" time="0.851"/>
+  <testcase name="testSignUp()" classname="com.alco.member.service.MemberSignUpServiceTest" time="0.006"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
