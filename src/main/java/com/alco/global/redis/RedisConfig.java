@@ -1,4 +1,4 @@
-package com.alco.global.config;
+package com.alco.global.redis;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;

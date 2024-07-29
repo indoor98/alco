@@ -1,7 +1,7 @@
 package com.alco.auth.service;
 
 import com.alco.auth.domain.PayLoad;
-import com.alco.global.dao.RedisDao;
+import com.alco.global.redis.dao.RedisDao;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -45,7 +45,7 @@ public class JwtProvider {
         return refreshToken;
     }
 
-    public Claims getPayload(String token) {
+    public Claims getClaims(String token) {
         return Jwts.parserBuilder()
                     .setSigningKey(key)
                 .build()
@@ -63,7 +63,7 @@ public class JwtProvider {
                 .setSubject(type)
                 .setIssuedAt(now)
                 .setExpiration(validity)
-                .claim("Authorities", payLoad.getAuthority())
+                .claim("authority", payLoad.getAuthority())
                 .claim("id", payLoad.getMemberId())
                 .claim("nickname", payLoad.getNickname())
                 .signWith(key, SignatureAlgorithm.HS256)

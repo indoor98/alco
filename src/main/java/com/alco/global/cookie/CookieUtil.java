@@ -1,4 +1,4 @@
-package com.alco.global.util;
+package com.alco.global.cookie;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseCookie;

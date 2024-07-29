@@ -1,4 +1,4 @@
-package com.alco.global.dao;
+package com.alco.global.redis.dao;
 
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
