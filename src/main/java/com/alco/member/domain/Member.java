@@ -12,6 +12,7 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -45,6 +46,9 @@ public class Member {
     @LastModifiedDate
     @Column(nullable = true)
     private LocalDateTime modifiedAt;
+
+    @Column(updatable = true)
+    private Authority authority = Authority.USER;
 
     @Builder
     Member(

@@ -17,5 +17,16 @@ spring:
     hibernate:
       ddl-auto: create-drop
 
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+  jwt:
+    key: ${JWT_SECRET_KEY}
+    validity:
+      atk: 300000
+      rtk: 3000000
+
 server:
   port: 8080
